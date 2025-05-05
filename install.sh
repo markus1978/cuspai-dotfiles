@@ -1,6 +1,11 @@
 #!/bin/sh
 
-sudo apt-get install -y fzf
+sudo apt-get install -y fzf nodejs npm
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 cd $HOME
