@@ -24,4 +24,3 @@ source /usr/share/bash-completion/completions/git
 source /etc/bash_completion.d/gcloud
 source /usr/share/bash-completion/completions/docker
 eval "$(gh completion -s bash)"
-eval "$(coder completion -s bash)"
