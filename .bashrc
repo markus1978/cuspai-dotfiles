@@ -24,3 +24,6 @@ source /usr/share/bash-completion/completions/git
 source /etc/bash_completion.d/gcloud
 source /usr/share/bash-completion/completions/docker
 eval "$(gh completion -s bash)"
+eval "$(kubectl completion bash)"
+
+unset GITHUB_TOKEN
