@@ -26,4 +26,9 @@ source /usr/share/bash-completion/completions/docker
 eval "$(gh completion -s bash)"
 eval "$(kubectl completion bash)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
 unset GITHUB_TOKEN
