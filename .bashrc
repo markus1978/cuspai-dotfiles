@@ -32,3 +32,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 unset GITHUB_TOKEN
+
+# gcloud/keyring
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_credentials.json
+export UV_KEYRING_PROVIDER=subprocess
+export UV_INDEX_CUSPY_USERNAME=oauth2accesstoken
+export PATH="/home/coder/.local/bin:$PATH"
