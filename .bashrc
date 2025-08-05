@@ -38,3 +38,8 @@ export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_c
 export UV_KEYRING_PROVIDER=subprocess
 export UV_INDEX_CUSPY_USERNAME=oauth2accesstoken
 export PATH="/home/coder/.local/bin:$PATH"
+
+# secrets
+if [ -f ~/.secrets.sh ]; then
+  source ~/.secrets.sh
+fi

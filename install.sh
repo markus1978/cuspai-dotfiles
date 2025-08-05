@@ -7,6 +7,7 @@ sudo apt-get install -y libopengl0 libxkbcommon0 libxkbcommon-x11-0 libxcb-icccm
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
+sudo npm install -g @google/gemini-cli
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
@@ -22,3 +23,6 @@ ln -sf .config/coderv2/dotfiles/.bash_profile .bash_profile
 cd $HOME/platform
 pre-commit install
 pre-commit install --hook-type commit-msg
+
+git config --global alias.co "commit -a --no-verify"
+git config --global alias.co-amend "commit -a --amend --no-edit --no-verify"
