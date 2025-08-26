@@ -25,6 +25,9 @@ source /etc/bash_completion.d/gcloud
 source /usr/share/bash-completion/completions/docker
 eval "$(gh completion -s bash)"
 eval "$(kubectl completion bash)"
+gh-branch-delete-merged-closed() {
+  gh pr list --author "@me" --state merged --state closed --json headRefName --template '{{range .}}{{.headRefName}}{{"\n"}}{{end}}' | xargs git branch -Dq -- 2>/dev/null
+}
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
