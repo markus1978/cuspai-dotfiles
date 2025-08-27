@@ -12,13 +12,6 @@ alias ls='ls --color=auto'
 export STARSHIP_CONFIG="$HOME/.config/coderv2/dotfiles/.starship.toml"
 eval "$(starship init bash)"
 
-# fzf
-eval "$(fzf --bash)"
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
 # bash completion
 source /usr/share/bash-completion/completions/git
 source /etc/bash_completion.d/gcloud
@@ -28,6 +21,16 @@ eval "$(kubectl completion bash)"
 gh-branch-delete-merged-closed() {
   gh pr list --author "@me" --state merged --state closed --json headRefName --template '{{range .}}{{.headRefName}}{{"\n"}}{{end}}' | xargs git branch -Dq -- 2>/dev/null
 }
+
+# fzf
+eval "$(fzf --bash)"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+if [ -f "$HOME/.config/coderv2/dotfiles/fzf-git.sh" ]; then
+  source "$HOME/.config/coderv2/dotfiles/fzf-git.sh"
+fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
