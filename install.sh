@@ -1,8 +1,10 @@
 #!/bin/sh
 
-sudo apt-get install -y fzf nodejs npm
+sudo apt-get install -y fzf nodejs npm ruby-rubygems
 sudo apt-get install -y libopengl0 libxkbcommon0 libxkbcommon-x11-0 libxcb-icccm4 \
     libxcb-image0 libxcb-keysyms1 libxcb-render-util0
+
+sudo gem install foreman
 
 sudo npm cache clean -f
 sudo npm install -g n

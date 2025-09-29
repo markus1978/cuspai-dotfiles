@@ -49,3 +49,8 @@ export PATH="/home/coder/.local/bin:$PATH"
 if [ -f ~/.secrets.sh ]; then
   source ~/.secrets.sh
 fi
+
+# Source Coder startup environment
+if [ -f "$HOME/.bashrc.startup" ]; then
+    source "$HOME/.bashrc.startup"
+fi
