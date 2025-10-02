@@ -13,18 +13,9 @@ sudo npm install -g @google/gemini-cli
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-curl https://pyenv.run | bash
-
-pip3 install uv
-uv tool install keyring --with keyrings.google-artifactregistry-auth
-
 cd $HOME
 ln -sf .config/coderv2/dotfiles/.bashrc .bashrc
 ln -sf .config/coderv2/dotfiles/.bash_profile .bash_profile
-
-cd $HOME/platform
-pre-commit install
-pre-commit install --hook-type commit-msg
 
 git config --global alias.co "commit -a --no-verify"
 git config --global alias.co-amend "commit -a --amend --no-edit --no-verify"
