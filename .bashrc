@@ -21,6 +21,8 @@ eval "$(kubectl completion bash)"
 gh-branch-delete-merged-closed() {
   gh pr list --author "@me" --state merged --state closed --json headRefName --template '{{range .}}{{.headRefName}}{{"\n"}}{{end}}' | xargs git branch -Dq -- 2>/dev/null
 }
+source "$HOME/.config/coderv2/dotfiles/gt-complete.sh"
+source "$HOME/.config/coderv2/dotfiles/just-complete.sh"
 
 # fzf
 eval "$(fzf --bash)"
@@ -33,9 +35,9 @@ if [ -f "$HOME/.config/coderv2/dotfiles/fzf-git.sh" ]; then
 fi
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - bash)"
 
 unset GITHUB_TOKEN
 
