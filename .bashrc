@@ -21,6 +21,9 @@ eval "$(kubectl completion bash)"
 gh-branch-delete-merged-closed() {
   gh pr list --author "@me" --state merged --state closed --json headRefName --template '{{range .}}{{.headRefName}}{{"\n"}}{{end}}' | xargs git branch -Dq -- 2>/dev/null
 }
+gh-main() {
+  git checkout main && git pull && git submodule update --init --recursive
+}
 source "$HOME/.config/coderv2/dotfiles/gt-complete.sh"
 source "$HOME/.config/coderv2/dotfiles/just-complete.sh"
 
