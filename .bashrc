@@ -59,3 +59,8 @@ fi
 if [ -f "$HOME/.bashrc.startup" ]; then
     source "$HOME/.bashrc.startup"
 fi
+
+# CuspAI Platform Configuration (added by helpers/scripts)
+if [[ -f "/home/coder/env.cusp" ]]; then
+  source "/home/coder/env.cusp"
+fi

@@ -11,7 +11,7 @@ sudo npm install -g n
 sudo n stable
 sudo npm install -g @google/gemini-cli
 
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+sudo curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 
 cd $HOME
 ln -sf .config/coderv2/dotfiles/.bashrc .bashrc
