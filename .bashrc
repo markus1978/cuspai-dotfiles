@@ -41,6 +41,7 @@ fi
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init - bash)"
+alias python-default="pixi shell --manifest-path third-party/resolves/python-default/pyproject.toml"
 
 unset GITHUB_TOKEN
 
@@ -50,17 +51,26 @@ export UV_KEYRING_PROVIDER=subprocess
 export UV_INDEX_CUSPY_USERNAME=oauth2accesstoken
 export PATH="/home/coder/.local/bin:$PATH"
 
+# datahold
+alias dh="python -m cuspy_datahold.cli"
+
 # secrets
 if [ -f ~/.secrets.sh ]; then
-  source ~/.secrets.sh
+ source ~/.secrets.sh
 fi
 
 # Source Coder startup environment
 if [ -f "$HOME/.bashrc.startup" ]; then
-    source "$HOME/.bashrc.startup"
+   source "$HOME/.bashrc.startup"
 fi
 
 # CuspAI Platform Configuration (added by helpers/scripts)
 if [[ -f "/home/coder/env.cusp" ]]; then
-  source "/home/coder/env.cusp"
+ source "/home/coder/env.cusp"
 fi
+
+# CuspAI Platform Configuration (added by helpers/scripts)
+if [[ -f "/etc/profile.d/cusp_profile.sh" ]]; then
+ source "/etc/profile.d/cusp_profile.sh"
+fi
+

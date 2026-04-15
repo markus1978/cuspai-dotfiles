@@ -19,3 +19,7 @@ ln -sf .config/coderv2/dotfiles/.bash_profile .bash_profile
 
 git config --global alias.co "commit -a --no-verify"
 git config --global alias.co-amend "commit -a --amend --no-edit --no-verify"
+
+curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output ~/vscode_cli.tar.gz
+tar -xf vscode_cli.tar.gz
+rm -rf vscode_cli.tar.gz
