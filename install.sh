@@ -23,3 +23,6 @@ git config --global alias.co-amend "commit -a --amend --no-edit --no-verify"
 curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output ~/vscode_cli.tar.gz
 tar -xf vscode_cli.tar.gz
 rm -rf vscode_cli.tar.gz
+
+cp ~/.config/coderv2/dotfiles/restart-code-server.sh ~/.local/bin/restart-code-server
+chmod +x ~/.local/bin/restart-code-server
