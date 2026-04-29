@@ -53,6 +53,7 @@ export PATH="/home/coder/.local/bin:$PATH"
 
 # datahold
 alias dh="python -m cuspy_datahold.cli"
+alias dh-clean-pods="kubectl get pods | grep -v STATUS | grep -v Running | awk '{print $1}' | xargs kubectl delete pods --"
 
 # secrets
 if [ -f ~/.secrets.sh ]; then
